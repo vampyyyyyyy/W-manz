@@ -20,7 +20,7 @@ status: complete
 Other directives live in the same comment slot: `--!native` ([[Native_Code_Generation]]), `--!optimize 0|1|2` ([[Luau_Compiler_Optimizations]]), `--!nolint`.
 
 ## Experience-wide default (Roblox)
-`Workspace.LuauTypeCheckMode` sets the mode for scripts without a directive. `Workspace.UseNewLuauTypeSolver` (`Enum.RolloutState`: `Default`/`Disabled`/`Enabled`) chooses the solver implementation ([[New_Type_Solver]]). File directives still win per script.
+`Workspace.LuauTypeCheckMode` sets the mode for scripts without a directive. `Workspace.UseNewLuauTypeSolver` (`Enum.RolloutState`: `Default`/`Disabled`/`Enabled`) chooses the solver implementation ([[New_Type_Solver]]). Under `Default`, projects with `--!strict` scripts still get the **old** solver (as of Oct 2026), so set it to `Enabled` to opt in. File directives still win per script.
 
 ## Strict vs nonstrict in practice
 ```luau

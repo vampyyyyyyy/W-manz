@@ -18,7 +18,7 @@ status: needs-verification
 | Creation | **AI Scene Generation:** prompt + reference image → functional layout, refine in Studio | Newsroom |
 | AI roadmap | Coding, 3D objects, multiplayer NPCs, video/realism (VP Foundation AI) | Press |
 | Discovery | Ranking considers a game's **first 28 days**, not just week one | Newsroom |
-| Payouts | **Wallet** (Airwallex reported), daily local-currency payouts, U.S. first (~Dec 2026). **Roblox Card** in 2027 ([[Roblox_Wallet_Transition]]) | Press |
+| Payouts | **Wallet**: daily USD payouts for U.S. 18+ sole proprietors from Dec 2026. U.S. DevEx stays until mid-2027. **Roblox Card** in 2027 ([[Roblox_Wallet_Transition]]) | **Official** (DevForum announcement) |
 | Payouts | Higher 18+ U.S. rate (docs: $0.0054 vs $0.0038) ([[Developer_Exchange_DevEx]]) | Docs ✓ |
 | Platform | Browser play (end 2026), offline play (mid-2027), standalone apps | Press |
 | Platform | Reports of letting developers sell games outside Roblox | Single source |
