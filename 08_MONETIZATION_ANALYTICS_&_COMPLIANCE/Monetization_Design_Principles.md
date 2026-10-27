@@ -16,7 +16,7 @@ status: complete
 2. **Fairness in competition.** Paid stat boosts in PvP combat erode trust and retention. Monetize skins, kill effects, ODM trail colors and titles instead ([[Combat_System_Architecture]], [[ODM_Gear_System]]).
 3. **Clear value.** Show exactly what the player gets, at its real price (dynamic prices, Plus discounts) ([[MarketplaceService]], [[Price_Optimization_and_Regional_Pricing]]).
 4. **No dark patterns.** No fake timers, disguised ads or deceptive odds. Paid randomness needs disclosure and policy handling ([[Paid_Random_Items_Policy]], [[Experience_Notifications]]).
-5. **Diversify income:** passes, products, subscriptions, rewarded video, Creator Rewards ([[Subscriptions]], [[Rewarded_Video_Ads]], [[Creator_Rewards]]).
+5. **Diversify income:** passes, products, subscriptions, rewarded video, Creator Rewards, and eventually real-world merch ([[Subscriptions]], [[Rewarded_Video_Ads]], [[Creator_Rewards]], [[Commerce_Products]], the last for 18+ creators).
 6. **Server-authoritative economy:** purchases, currency and trades are validated and idempotent ([[ProcessReceipt_Idempotency]], [[Data_Duplication_and_Trade_Exploits]]).
 7. **Measure, then iterate:** economy events plus experiments ([[AnalyticsService_Events]], [[Experiments_and_AB_Testing]]).
 

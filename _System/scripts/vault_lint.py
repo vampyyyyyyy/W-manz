@@ -30,9 +30,12 @@ CONTENT_DIR_RE = re.compile(r"^\d\d_")
 SKIP_DIRS = {".git", ".obsidian", ".github", ".trash", "node_modules"}
 # Folders whose notes are not graph content (raw inputs, templates, tooling).
 NON_CONTENT_DIRS = {"_Inbox", "_System"}
+# Raw material: human drops and their archive. Never link targets, never
+# checked, and a name clash with a real note is only a warning.
+RAW_DIRS = {"_Inbox", os.path.join("_System", "Inbox_Archive")}
 # Links inside these folders are not checked (templates use placeholders,
 # inbox items are raw and get rewritten by the agent).
-UNCHECKED_LINK_DIRS = {"_Inbox", os.path.join("_System", "Templates")}
+UNCHECKED_LINK_DIRS = RAW_DIRS | {os.path.join("_System", "Templates")}
 
 ALLOWED_TYPES = {"concept", "api", "framework", "code-pattern", "forum-archive", "architecture", "moc"}
 ALLOWED_STATUS = {"complete", "draft", "needs-verification", "stub"}
@@ -143,6 +146,10 @@ def links_unchecked(rel: str) -> bool:
     return any(rel.startswith(d + os.sep) for d in UNCHECKED_LINK_DIRS)
 
 
+def is_raw(rel: str) -> bool:
+    return any(rel.startswith(d + os.sep) for d in RAW_DIRS)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--root", default=os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
@@ -159,10 +166,15 @@ def main() -> int:
     # name index (Obsidian resolves [[Name]] by file name, case-insensitively)
     by_name: dict[str, list[str]] = defaultdict(list)
     for rel in notes:
-        by_name[os.path.splitext(os.path.basename(rel))[0].lower()].append(rel)
+        if not is_raw(rel):
+            by_name[os.path.splitext(os.path.basename(rel))[0].lower()].append(rel)
     for name, rels in by_name.items():
         if len(rels) > 1:
             errors.append(f"duplicate note name '{name}': {', '.join(rels)}")
+    for rel in notes:
+        name = os.path.splitext(os.path.basename(rel))[0].lower()
+        if is_raw(rel) and name in by_name:
+            warnings.append(f"{rel}: same name as {by_name[name][0]} (rename the raw note to avoid ambiguous links)")
 
     def resolve(target: str):
         target = target.strip()
