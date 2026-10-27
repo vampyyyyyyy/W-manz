@@ -224,7 +224,8 @@ def main() -> int:
 
         targets = set()
         for m in WIKILINK_RE.finditer(strip_code(body_without_frontmatter(text))):
-            raw_target = m.group(1)
+            # inside tables Obsidian needs [[Note\|alias]], so drop the escaping backslash
+            raw_target = m.group(1).rstrip("\\")
             hit = resolve(raw_target)
             if hit is None:
                 errors.append(f"{rel}: unresolved link [[{raw_target.strip()}]]")

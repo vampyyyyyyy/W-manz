@@ -12,7 +12,7 @@ status: complete
 > **TL;DR:** devforum.roblox.com is the official developer community. **Announcements** (Tier 2 source) for engine and feature launches, **Help and Feedback** (Scripting Support, Building Support, Art Design, Game Design, Code Review, Creations Feedback/Cool Creations), **Resources** (Community Resources, Community Tutorials, Open Source), **Bug Reports** (Engine/Studio/Documentation) and **Feature Requests**. Search before posting, post a minimal repro, and treat community posts as Tier 4 until verified.
 
 ## Getting value fast
-- **Follow Announcements:** subscribe or watch the category, since betas (Server Authority, Script Sync, CCL) land there first ([[Release_Notes_and_Change_Tracking]], [[Fast_Flags_and_Beta_Features]]).
+- **Follow Announcements:** subscribe or watch the category, since betas and full releases (Server Authority, Script Sync, CCL) land there first ([[Release_Notes_and_Change_Tracking]], [[Fast_Flags_and_Beta_Features]]).
 - **Mine Community Resources:** most libraries in [[Community_Modules_Index]] have a DevForum thread with changelogs and known issues.
 - **Read bug reports** before chasing "my code is broken". Engine regressions are often already filed ([[Historical_Bugs_and_Outages]]).
 

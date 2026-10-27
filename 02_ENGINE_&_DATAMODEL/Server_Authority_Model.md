@@ -5,11 +5,11 @@ tags:
   - engine/netcode
 type: architecture
 last_updated: 2026-10-27
-status: needs-verification
+status: complete
 ---
-# Server Authority Model (beta)
+# Server Authority Model
 
-> **TL;DR:** Roblox's engine-level netcode for competitive games (**beta, "releasing soon" per the docs as of Oct 2026**). The server is the single source of truth. Clients send only **inputs** (Input Action System), **predict** a few frames ahead, and **roll back + resimulate** on misprediction. It kills speed and fly hacks *by design*, because client-reported positions are never trusted ([[Movement_Validation]], [[Exploit_Threat_Model]]).
+> **TL;DR:** Roblox's engine-level netcode for competitive games. It is now in **full release** (DevForum "[Full Release]" announcement, mid-2026; the main docs page carries no beta banner as of Oct 2026, though one older docs page still says "beta"). The server is the single source of truth. Clients send only **inputs** (Input Action System), **predict** a few frames ahead, and **roll back + resimulate** on misprediction. It kills speed and fly hacks *by design*, because client-reported positions are never trusted ([[Movement_Validation]], [[Exploit_Threat_Model]]).
 
 ## Setup (Workspace)
 `AuthorityMode = Server` automatically sets:
@@ -47,7 +47,7 @@ return Simulation
 ## When to adopt
 | Game | Recommendation |
 | --- | --- |
-| Competitive PvP, racing, sports, ODM combat | Prototype on server authority now (beta). Ship when it's out of beta |
+| Competitive PvP, racing, sports, ODM combat | Use server authority. It's the fix for movement and fly exploits. Budget time to tune prediction and misprediction rates under [[Studio_Testing_Modes\|Network Simulator]] latency |
 | Casual or co-op | Classic client-owned characters + validation is fine |
 | Heavy custom physics | Test misprediction rates (MicroProfiler, `Misprediction` events) |
 
@@ -57,3 +57,4 @@ return Simulation
 ## Sources
 - https://create.roblox.com/docs/projects/server-authority · https://create.roblox.com/docs/projects/server-authority/techniques
 - https://create.roblox.com/docs/reference/engine/classes/RunService
+- https://devforum.roblox.com/t/full-release-ship-fair-and-competitive-games-with-server-authority/4727993 (full-release announcement)

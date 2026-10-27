@@ -19,7 +19,7 @@ status: complete
 3. [[Replication_Model]]: what the server sends and what clients can change
 4. [[Network_Ownership]]: who simulates physics, and why exploiters care
 5. [[Physics_Engine_and_Assemblies]]: assemblies, solver and constraints
-6. [[Server_Authority_Model]]: the 2026 server-authoritative simulation beta
+6. [[Server_Authority_Model]]: server-authoritative simulation with prediction and rollback (full release, 2026)
 
 ## Core architecture
 - **DataModel:** [[DataModel_and_Instance_Hierarchy]] · [[Instance_Lifecycle_and_Destroy]] · [[Services_Overview]] · [[Script_Types_and_RunContext]] · [[Container_Services_and_Replication_Scope]]

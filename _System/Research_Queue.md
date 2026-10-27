@@ -7,7 +7,7 @@ Format: `- [ ] (P#) Topic: what to find out (where to look)`
 ## P1: Verify / keep current
 - [ ] (P1) Roblox Wallet: official payout details, fees, minimums, eligibility for under-18 creators, DevEx sunset timing (Creator Hub ▸ Finances, DevForum Announcements). Update [[Roblox_Wallet_Transition]] and [[Developer_Exchange_DevEx]], and set `status: complete` once confirmed.
 - [ ] (P1) RDC 2026 items: confirm Build, AI Scene Generation, browser and offline play timelines in official posts. Update [[RDC_2026_Recap]].
-- [ ] (P1) Server Authority: GA date, any API changes since the beta docs. Update [[Server_Authority_Model]] (still `needs-verification`).
+- [x] (P1) Server Authority: confirmed full release (DevForum "[Full Release]" post). Exact date still unverified (a secondary source says July 9, 2026), and one docs page (scripting/security/network-ownership) still says "beta". Updated [[Server_Authority_Model]].
 - [ ] (P1) New type solver rollout state (`Workspace.UseNewLuauTypeSolver` default). Update [[New_Type_Solver]].
 - [ ] (P1) Weekly: diff Creator Docs release notes (`Roblox/creator-docs`, `content/en-us/releases*`) and update affected notes ([[Release_Notes_and_Change_Tracking]]).
 - [ ] (P1) Weekly: `luau-lang/rfcs` changes, especially implementation progress on classes ([[Luau_RFC_Tracker]], [[Luau_Classes_Proposal]]).

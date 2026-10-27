@@ -9,7 +9,7 @@ status: complete
 ---
 # Client Prediction & Reconciliation
 
-> **TL;DR:** **Prediction:** the client applies its own inputs immediately instead of waiting a round trip. **Reconciliation:** when the authoritative state arrives, the client compares it with what it predicted for that tick, and on mismatch **rewinds to the server state and replays unacknowledged inputs**. **Interpolation:** other entities are rendered slightly in the past between snapshots for smoothness. Roblox's [[Server_Authority_Model]] (beta) implements this in the engine. Without it, you build lighter versions yourself.
+> **TL;DR:** **Prediction:** the client applies its own inputs immediately instead of waiting a round trip. **Reconciliation:** when the authoritative state arrives, the client compares it with what it predicted for that tick, and on mismatch **rewinds to the server state and replays unacknowledged inputs**. **Interpolation:** other entities are rendered slightly in the past between snapshots for smoothness. Roblox's [[Server_Authority_Model]] implements this in the engine. Without it, you build lighter versions yourself.
 
 ## The three techniques
 | Technique | For | How |

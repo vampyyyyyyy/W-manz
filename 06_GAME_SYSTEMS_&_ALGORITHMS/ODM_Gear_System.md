@@ -47,7 +47,7 @@ Remove gravity partially while reeling (gameplay choice) and clamp max speed for
 ## Networking & anti-cheat
 - Replicate hook **state and anchor positions** (an UnreliableRemoteEvent at ~20 Hz plus reliable attach/detach events) so other clients draw cables ([[UnreliableRemoteEvent]]).
 - The server checks the anchor is within range and line of sight of the player's server position at fire time. It deducts gas and raises the movement budget only while hooks are validly attached ([[Movement_Validation]]).
-- Competitive ODM PvP: move hook logic into `BindToSimulation` under the server authority beta, or the CCL with deterministic callbacks ([[Character_Controllers_and_ControllerManager]]).
+- Competitive ODM PvP: move hook logic into `BindToSimulation` under server authority, or the CCL with deterministic callbacks ([[Character_Controllers_and_ControllerManager]]).
 
 ## Related
 [[Grappling_Hook_Physics]] · [[Custom_Movement_Abilities]] · [[Movement_Validation]] · [[Mover_Constraints]] · [[Mechanical_Constraints]] · [[Camera_System]] · [[Beams_and_Trails]] · [[Server_Authority_Model]] · [[Character_Controllers_and_ControllerManager]] · [[Client_Prediction_and_Reconciliation]] · [[MOC_Movement_and_ODM]]

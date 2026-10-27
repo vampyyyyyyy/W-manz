@@ -26,7 +26,7 @@ status: complete
 A client can locally set its own WalkSpeed, delete a wall, or show itself as having 1M coins. **None of that replicates**, except effects through owned physics (moving through the wall). The server must never read client-reported state as truth ([[Exploit_Threat_Model]]).
 
 ## Next-gen replication and server authority
-`Workspace.NextGenerationReplication` is required by the [[Server_Authority_Model]] (beta). Under server authority, predicted instances sync properties with *simulation access* plus attributes, and mismatches trigger rollback.
+`Workspace.NextGenerationReplication` is required by the [[Server_Authority_Model]]. Under server authority, predicted instances sync properties with *simulation access* plus attributes, and mismatches trigger rollback.
 
 ## Practical guidance
 - **Visual effects:** server sends an event, clients create visuals locally. Don't create VFX parts on the server ([[Client_Side_VFX_Replication]]).

@@ -9,7 +9,7 @@ status: complete
 ---
 # Movement Validation (Server-Side)
 
-> **TL;DR:** Clients own their character's physics, so the server *observes* movement instead of simulating it ([[Network_Ownership]]). Validate the **distance travelled over time** with a burst-tolerant **leaky bucket**, project to the right plane, exempt your own teleports and abilities, and **rubber-band** instead of kicking. For competitive games, the real fix is the [[Server_Authority_Model]] (beta as of Oct 2026).
+> **TL;DR:** Clients own their character's physics, so the server *observes* movement instead of simulating it ([[Network_Ownership]]). Validate the **distance travelled over time** with a burst-tolerant **leaky bucket**, project to the right plane, exempt your own teleports and abilities, and **rubber-band** instead of kicking. For competitive games, the real fix is the [[Server_Authority_Model]] (full release in 2026).
 
 ## Problem
 Exploiters can teleport, fly, noclip, or set `WalkSpeed` locally **without firing any event your scripts could see**. Naive `distance > speed * dt` checks false-flag laggy players, because positions arrive in bursts. They also break for knockback, vehicles, launch pads and movement tech like [[ODM_Gear_System|ODM]] or [[Custom_Movement_Abilities|dashes]].

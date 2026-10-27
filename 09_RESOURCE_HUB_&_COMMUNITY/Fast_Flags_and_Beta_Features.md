@@ -12,9 +12,10 @@ status: complete
 > **TL;DR:** Roblox ships code **behind flags** and turns behavior on gradually (and off if it breaks), so availability can differ between Studio, clients and servers during a rollout. Creators interact with this through **Studio ▸ File ▸ Beta Features** (opt-in betas) and **RolloutState-style properties** on services, e.g. `Workspace.UseNewLuauTypeSolver` (`Default` / `Disabled` / `Enabled`) and `Workspace.SignalBehavior`. Internal FFlags are not an API: never depend on them or ask players to change them.
 
 ## Betas worth knowing (Oct 2026)
+Server Authority graduated to **full release** in 2026 ([[Server_Authority_Model]]).
+
 | Beta | Where | Vault note |
 | --- | --- | --- |
-| Server Authority (prediction, rollback) | Studio beta / `Workspace.AuthorityMode` | [[Server_Authority_Model]] |
 | Character Controller Library (`@rbx/AvatarAbilities`) | File ▸ Beta Features | [[Character_Controllers_and_ControllerManager]] |
 | Script Sync | File ▸ Beta Features | [[Script_Sync]] |
 | New Device Simulator + Network Simulator | File ▸ Beta Features | [[Studio_Testing_Modes]] |

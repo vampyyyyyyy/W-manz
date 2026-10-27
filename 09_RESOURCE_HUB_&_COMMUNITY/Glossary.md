@@ -14,7 +14,7 @@ status: complete
 ## A–D
 - **Actor:** container whose scripts can run in parallel. See [[Actors_and_Messaging]], [[Parallel_Luau]].
 - **Assembly:** rigidly connected parts simulated as one body. See [[Physics_Engine_and_Assemblies]].
-- **AuthorityMode (Server):** the server-authoritative simulation beta with prediction and rollback. See [[Server_Authority_Model]].
+- **AuthorityMode (Server):** server-authoritative simulation with prediction and rollback (full release, 2026). See [[Server_Authority_Model]].
 - **Bitpacking:** fitting several values into fewer bits. See [[Bitpacking]], [[Buffer_Library]].
 - **CCU / DAU:** concurrent users / daily active users, which scale DataStore budgets and analytics. See [[DataStore_Limits_and_Error_Codes]], [[Analytics_Dashboard_and_Metrics]].
 - **Deferred events:** handlers queued to resumption points instead of running immediately. See [[Deferred_Events_and_SignalBehavior]].

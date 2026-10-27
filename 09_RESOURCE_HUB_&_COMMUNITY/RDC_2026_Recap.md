@@ -24,7 +24,7 @@ status: needs-verification
 | Platform | Reports of letting developers sell games outside Roblox | Single source |
 
 ## Shipped in the docs around the same time (verified)
-Built-in Studio MCP server + coding-harness guide ([[Roblox_Studio_MCP_Server]]), Assistant planning mode and skills ([[Roblox_Assistant_and_AI_Tools]]), Server Authority beta ([[Server_Authority_Model]]), Character Controller Library beta, UI styling/StyleSheets ([[UI_Styling_StyleSheets]]), Roblox Plus and Robux transfers ([[MarketplaceService]]).
+Built-in Studio MCP server + coding-harness guide ([[Roblox_Studio_MCP_Server]]), Assistant planning mode and skills ([[Roblox_Assistant_and_AI_Tools]]), Server Authority full release ([[Server_Authority_Model]]), Character Controller Library beta, UI styling/StyleSheets ([[UI_Styling_StyleSheets]]), Roblox Plus and Robux transfers ([[MarketplaceService]]).
 
 ## What it means for a combat/VFX creator
 - AI tools speed up blockouts and scaffolding, but **game feel** (hit timing, movement) and **server-authoritative netcode** are still the differentiators ([[Combat_System_Architecture]]).
