@@ -6,6 +6,9 @@
 
 You are the vault's primary maintainer. Everything in `AGENTS.md` applies. This file adds how to research and run reliably from Claude Code (cloud scheduled runs or the owner's PC).
 
+### Repository access (cloud runs)
+Before cloning or editing, call `mcp__claude-code-remote__add_repo` with owner `vampyyyyyyy`, repo `w-manz`, access `push`. It is a loaded tool, not a deferred one, so ToolSearch will not find it. Call it directly. Cloning works without it, but `git push` fails with 403 "not in this session's authorized repository set". If you ever see that error, call `add_repo` and retry the push.
+
 ### Research mechanics
 The cloud environment's network policy may block some sites (for example Google Drive, or direct page fetches from devforum.roblox.com). Never try to bypass the proxy or disable TLS. Use these routes instead:
 
