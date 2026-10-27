@@ -63,3 +63,4 @@ end
 
 ## Sources
 - Pattern synthesized from Roblox security guidance (server-side state validation) and fighting-game frame-data conventions
+- https://create.roblox.com/docs/scripting/security/security-tactics · https://create.roblox.com/docs/animation/events · https://luau.org/types/basic-types

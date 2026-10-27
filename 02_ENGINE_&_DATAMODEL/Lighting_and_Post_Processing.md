@@ -36,7 +36,12 @@ status: complete
 ```luau
 -- Client: react to replicated weather intensity (e.g. workspace attribute set by the server)
 local TweenService = game:GetService("TweenService")
-local cc = game.Lighting:FindFirstChildOfClass("ColorCorrectionEffect") or Instance.new("ColorCorrectionEffect", game.Lighting)
+local Lighting = game:GetService("Lighting")
+local cc = Lighting:FindFirstChildOfClass("ColorCorrectionEffect")
+if not cc then
+	cc = Instance.new("ColorCorrectionEffect")
+	cc.Parent = Lighting -- set Parent last
+end
 workspace:GetAttributeChangedSignal("RainIntensity"):Connect(function()
 	local i = workspace:GetAttribute("RainIntensity") or 0
 	TweenService:Create(cc, TweenInfo.new(3), {

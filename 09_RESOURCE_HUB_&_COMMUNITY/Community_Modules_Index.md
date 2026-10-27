@@ -59,4 +59,38 @@ Typed API? Tests/CI? Recent releases? Issue response? License? Security review o
 [[Wally]] · [[Pesde]] · [[Trusted_Sources]] · [[Third_Party_Code_and_Backdoors]] · [[Legacy_Code_Smells]] · [[Knit]] · [[Fusion]] · [[ProfileStore]] · [[Networking_Libraries_Comparison]] · [[DataStore_Libraries_Comparison]] · [[MOC_Resource_Hub_and_Community]]
 
 ## Sources
-- GitHub repositories of each project (cloned 2026-10-27): rojo-rbx/rojo, UpliftGames/wally, pesde-pkg/pesde, rojo-rbx/rokit, Kampfkarren/selene, JohnnyMorganz/StyLua, JohnnyMorganz/luau-lsp, lune-org/lune, seaofvoices/darklua, roblox-ts/roblox-ts, Sleitnick/rbxcloud, Roblox/studio-rust-mcp-server, Sleitnick/Knit, Sleitnick/RbxUtil, howmanysmall/Janitor, Data-Oriented-House/LemonSignal, MadStudioRoblox/ProfileStore, nezuo/lapis, evaera/roblox-lua-promise, 1Axen/blink, red-blox/zap, ffrostflame/ByteNet, Ukendio/jecs, matter-ecs/matter, evaera/Cmdr, dphfox/Fusion, jsdotlua/react-lua, Roblox/roact, centau/vide, littensy/charm, littensy/reflex, PepeElToro41/ui-labs, jsdotlua/jest-lua, Roblox/testez
+- GitHub repositories (cloned 2026-10-27; last-commit dates from `git log -1`):
+- https://github.com/rojo-rbx/rojo
+- https://github.com/UpliftGames/wally
+- https://github.com/pesde-pkg/pesde
+- https://github.com/rojo-rbx/rokit
+- https://github.com/Kampfkarren/selene
+- https://github.com/JohnnyMorganz/StyLua
+- https://github.com/JohnnyMorganz/luau-lsp
+- https://github.com/lune-org/lune
+- https://github.com/seaofvoices/darklua
+- https://github.com/roblox-ts/roblox-ts
+- https://github.com/Sleitnick/rbxcloud
+- https://github.com/Roblox/studio-rust-mcp-server
+- https://github.com/Sleitnick/Knit
+- https://github.com/Sleitnick/RbxUtil
+- https://github.com/howmanysmall/Janitor
+- https://github.com/Data-Oriented-House/LemonSignal
+- https://github.com/MadStudioRoblox/ProfileStore
+- https://github.com/nezuo/lapis
+- https://github.com/evaera/roblox-lua-promise
+- https://github.com/1Axen/blink
+- https://github.com/red-blox/zap
+- https://github.com/ffrostflame/ByteNet
+- https://github.com/Ukendio/jecs
+- https://github.com/matter-ecs/matter
+- https://github.com/evaera/Cmdr
+- https://github.com/dphfox/Fusion
+- https://github.com/jsdotlua/react-lua
+- https://github.com/Roblox/roact
+- https://github.com/centau/vide
+- https://github.com/littensy/charm
+- https://github.com/littensy/reflex
+- https://github.com/PepeElToro41/ui-labs
+- https://github.com/jsdotlua/jest-lua
+- https://github.com/Roblox/testez
