@@ -39,6 +39,8 @@ If the repo is private, Git will ask you to sign in to GitHub (Windows opens a b
 
 > The vault currently lives on the `claude/roblox-dev-vault` branch. If you merge it into `main` later, change the **Publishing branch** line in [AGENTS.md](AGENTS.md) so the automation pushes there instead.
 
+**On iPhone / iPad:** install Obsidian, create an empty vault, then install the community **Git** plugin and run its *Clone an existing remote repo* command with `https://github.com/vampyyyyyyy/W-manz.git` and branch `claude/roblox-dev-vault`. Mobile Git needs a GitHub **personal access token** (GitHub ▸ Settings ▸ Developer settings ▸ fine-grained token with *Contents: read and write* on this repo only). Keep the token private. Mobile Git is slower than desktop. If it struggles, the *Working Copy* app can clone the repo into an Obsidian folder instead.
+
 **Graph view tips:** the folders are color-coded (`.obsidian/graph.json`). Filter with `path:06_` to see one domain, and open `Home` to see the hubs.
 
 ## 2. Get automatic updates (Obsidian Git)
