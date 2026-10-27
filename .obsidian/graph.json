@@ -1,0 +1,93 @@
+{
+  "collapse-filter": false,
+  "search": "-path:_System -path:_Inbox -file:README -file:AGENTS -file:CLAUDE",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "path:\"00_MOC/\"",
+      "color": {
+        "a": 1,
+        "rgb": 15583560
+      }
+    },
+    {
+      "query": "path:\"01_LUAU_CORE_&_COMPILER/\"",
+      "color": {
+        "a": 1,
+        "rgb": 5142951
+      }
+    },
+    {
+      "query": "path:\"02_ENGINE_&_DATAMODEL/\"",
+      "color": {
+        "a": 1,
+        "rgb": 11565729
+      }
+    },
+    {
+      "query": "path:\"03_NETWORKING_SECURITY_&_BUFFERS/\"",
+      "color": {
+        "a": 1,
+        "rgb": 14767961
+      }
+    },
+    {
+      "query": "path:\"04_UI_UX_&_COMPONENT_DRIVEN/\"",
+      "color": {
+        "a": 1,
+        "rgb": 7780274
+      }
+    },
+    {
+      "query": "path:\"05_FRAMEWORKS_TOOLCHAIN_&_DEVOPS/\"",
+      "color": {
+        "a": 1,
+        "rgb": 15896107
+      }
+    },
+    {
+      "query": "path:\"06_GAME_SYSTEMS_&_ALGORITHMS/\"",
+      "color": {
+        "a": 1,
+        "rgb": 5873999
+      }
+    },
+    {
+      "query": "path:\"07_PERFORMANCE_OPTIMIZATION_&_PROFILING/\"",
+      "color": {
+        "a": 1,
+        "rgb": 16752039
+      }
+    },
+    {
+      "query": "path:\"08_MONETIZATION_ANALYTICS_&_COMPLIANCE/\"",
+      "color": {
+        "a": 1,
+        "rgb": 10253663
+      }
+    },
+    {
+      "query": "path:\"09_RESOURCE_HUB_&_COMMUNITY/\"",
+      "color": {
+        "a": 1,
+        "rgb": 12234924
+      }
+    }
+  ],
+  "collapse-display": false,
+  "showArrow": false,
+  "textFadeMultiplier": -1,
+  "nodeSizeMultiplier": 1.2,
+  "lineSizeMultiplier": 0.6,
+  "collapse-forces": false,
+  "centerStrength": 0.5,
+  "repelStrength": 12,
+  "linkStrength": 1,
+  "linkDistance": 120,
+  "scale": 0.6,
+  "close": false
+}

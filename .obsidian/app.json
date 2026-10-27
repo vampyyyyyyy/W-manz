@@ -1,0 +1,15 @@
+{
+  "alwaysUpdateLinks": true,
+  "newLinkFormat": "shortest",
+  "useMarkdownLinks": false,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "_Inbox",
+  "attachmentFolderPath": "_System/Attachments",
+  "userIgnoreFilters": [
+    "_System/scripts/",
+    "_System/Templates/"
+  ],
+  "showLineNumber": true,
+  "readableLineLength": true,
+  "propertiesInDocument": "visible"
+}
