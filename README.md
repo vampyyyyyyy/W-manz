@@ -55,7 +55,7 @@ Agents can't read Discord (it needs your login, and scraping breaks Discord's ru
 Full guide: [_System/Inbox_Guide.md](_System/Inbox_Guide.md). Not satisfied with a note? Drop an inbox item saying what's missing, and it gets rewritten as a priority.
 
 ## 4. Connect Claude
-- **Scheduled research (cloud):** a scheduled Claude Code task researches and updates this repo on a recurring schedule, following [CLAUDE.md](CLAUDE.md) and [AGENTS.md](AGENTS.md). Manage it in the Claude app (scheduled tasks). Ask Claude to change the cadence or pause it.
+- **Scheduled research (cloud):** a scheduled Claude Code task named **"Roblox vault research"** runs every **Monday and Thursday at 19:40 UTC** (mid-afternoon US Eastern time). It processes your inbox, verifies `needs-verification` notes, checks Roblox release notes, Luau RFCs and DevForum announcements, updates notes, runs the linter, logs to `_System/Changelog.md`, and pushes to this branch. It follows [CLAUDE.md](CLAUDE.md) and [AGENTS.md](AGENTS.md). Manage it in the Claude app's scheduled tasks, or ask Claude to change the cadence, run it now, or pause it.
 - **Claude Code on your PC:** run this from the vault folder:
   ```powershell
   cd "$HOME\Documents\Roblox Dev Vault"
