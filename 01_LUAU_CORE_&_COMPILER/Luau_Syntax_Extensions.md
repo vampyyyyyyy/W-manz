@@ -4,7 +4,7 @@ tags:
   - roblox-dev
   - luau/syntax
 type: concept
-last_updated: 2026-10-27
+last_updated: 2026-10-29
 status: complete
 ---
 # Luau Syntax Extensions (beyond Lua 5.1)
@@ -28,7 +28,7 @@ It must be the last statement of its block, and it's a contextual keyword (`cont
 local color = if hp > 50 then Color3.new(0, 1, 0) elseif hp > 20 then Color3.new(1, 1, 0) else Color3.new(1, 0, 0)
 local label = `{if count == 1 then "kill" else "kills"}`
 ```
-The `else` is required. Unlike `a and b or c`, this works when `b` is `false` or `nil`.
+The `else` is required. Unlike `a and b or c`, this works when `b` is `false` or `nil`. A Studio beta (Oct 2026) adds bindings in the condition (`if local p = … then p.Name else "?"`). See [[If_Local_Bindings]].
 
 ## Floor division `//`
 `7 // 2 == 3`, `-7 // 2 == -4` (floors toward −∞). `//=` exists, overloaded via `__idiv`. On native vectors it floors component-wise. `x // 0` gives ±inf and `0 // 0` gives NaN, so validate client numbers ([[NaN_and_Infinity_Exploits]]).
@@ -42,7 +42,7 @@ The `else` is required. Unlike `a and b or c`, this works when `b` is `false` or
 `goto`, labels, `::` as label syntax (`::` is a type cast in Luau: [[Type_Annotations_and_Casts]]), bitwise operators ([[Bitwise_Operations_bit32]]).
 
 ## Related
-[[Const_Bindings]] · [[String_Interpolation]] · [[Generalized_Iteration]] · [[Luau_Attributes]] · [[Luau_Lua_Compatibility]] · [[Numbers_and_Floating_Point]] · [[Metamethods]] · [[Type_Annotations_and_Casts]] · [[Luau_Overview]] · [[MOC_Luau_Core_and_Compiler]]
+[[Const_Bindings]] · [[If_Local_Bindings]] · [[String_Interpolation]] · [[Generalized_Iteration]] · [[Luau_Attributes]] · [[Luau_Lua_Compatibility]] · [[Numbers_and_Floating_Point]] · [[Metamethods]] · [[Type_Annotations_and_Casts]] · [[Luau_Overview]] · [[MOC_Luau_Core_and_Compiler]]
 
 ## Sources
 - https://luau.org/syntax · https://rfcs.luau.org/syntax-compound-assignment.html · https://rfcs.luau.org/syntax-if-expression.html

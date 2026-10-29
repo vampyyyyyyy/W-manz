@@ -4,14 +4,14 @@ tags:
   - roblox-dev
   - moc/luau
 type: moc
-last_updated: 2026-10-27
+last_updated: 2026-10-29
 status: complete
 ---
 # MOC: Luau Core & Compiler
 
 > **TL;DR:** Everything about **the language itself**: syntax, the gradual type system, runtime semantics (metatables, closures, coroutines, GC) and how the compiler, VM and native codegen make it fast. Read this domain before optimizing anything, because most performance wins come from understanding how Luau executes.
 
-*42 notes in this domain.*
+*43 notes in this domain.*
 
 ## Start here
 1. [[Luau_Overview]]: what Luau is and how it differs from Lua 5.1
@@ -22,7 +22,7 @@ status: complete
 6. [[Native_Code_Generation]]: when `--!native` helps and when it doesn't
 
 ## Language & syntax
-- **Foundations:** [[Luau_Overview]] · [[Luau_Lua_Compatibility]] · [[Luau_Syntax_Extensions]] · [[Const_Bindings]] · [[String_Interpolation]] · [[Generalized_Iteration]] · [[Varargs_and_Tuples]] · [[Luau_Attributes]]
+- **Foundations:** [[Luau_Overview]] · [[Luau_Lua_Compatibility]] · [[Luau_Syntax_Extensions]] · [[Const_Bindings]] · [[If_Local_Bindings]] (beta) · [[String_Interpolation]] · [[Generalized_Iteration]] · [[Varargs_and_Tuples]] · [[Luau_Attributes]]
 - **Modules & globals:** [[Require_and_Module_Resolution]] · [[Globals_G_shared_and_getfenv]] · [[Deprecated_wait_spawn_delay]]
 
 ## Type system

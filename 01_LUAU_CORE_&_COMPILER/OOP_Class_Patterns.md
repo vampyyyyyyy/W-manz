@@ -4,7 +4,7 @@ tags:
   - roblox-dev
   - luau/oop
 type: code-pattern
-last_updated: 2026-10-27
+last_updated: 2026-10-29
 status: complete
 ---
 # OOP Class Patterns
@@ -53,6 +53,7 @@ end
 return Hitbox
 ```
 - Declaring methods as `function Hitbox.Start(self: Hitbox)` rather than `Hitbox:Start()` gives the analyzer an explicit `self` type, which the Luau docs recommend for strict OOP.
+- **This annotation stays necessary.** The "shared self types" RFC, which would have inferred one shared `self` type for every method on a metatable, was **withdrawn on Oct 13, 2026** ("We will not be implementing shared self types", `luau-lang/rfcs` #193). Without explicit annotations, each `:` method infers its own `self`, and errors show up at call sites instead of definitions. Luau is investing in native classes instead ([[Luau_Classes_Proposal]]).
 - All fields are created in **one literal** in the constructor, which uses table templates for fast allocation ([[Luau_Compiler_Optimizations]]).
 
 ## Inheritance (use sparingly)
@@ -76,3 +77,4 @@ A `Fighter` *has* a `Hitbox`, a `Stamina`, a `StateMachine` ([[Combat_State_Mach
 
 ## Sources
 - https://luau.org/types/object-oriented-programs · https://luau.org/performance#fast-method-calls
+- https://github.com/luau-lang/rfcs/pull/193 (shared self types withdrawn, Oct 13, 2026)
