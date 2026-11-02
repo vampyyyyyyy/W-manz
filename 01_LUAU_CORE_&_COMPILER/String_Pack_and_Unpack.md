@@ -19,6 +19,7 @@ status: complete
 | `f`, `d` | float32, float64 |
 | `s4`, `z` | length-prefixed string (n-byte length), zero-terminated string |
 | `x` | one padding byte |
+
 ```luau
 local blob = string.pack("<I2 f s1", 513, 3.5, "ok")
 local id, speed, tag, nextPos = string.unpack("<I2 f s1", blob)

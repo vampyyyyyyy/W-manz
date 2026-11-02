@@ -4,7 +4,7 @@ tags:
   - roblox-dev
   - community/legacy
 type: concept
-last_updated: 2026-10-27
+last_updated: 2026-11-02
 status: complete
 ---
 # Legacy Code Smells
@@ -36,6 +36,7 @@ status: complete
 | `Workspace:FindPartOnRay*` | `Workspace:Raycast` ([[Raycasting]]) |
 | `Player:LoadCharacter` | `LoadCharacterAsync` ([[Player_and_Character_Lifecycle]]) |
 | `GetProductInfo` | `GetProductInfoAsync` ([[MarketplaceService]]) |
+| `ReserveServerAsync` + `ReservedServerAccessCode`, `ShouldReserveServer` | Server-generated GUID in `TeleportOptions.ReservedServerId`. Deprecated Oct 2026 ([[TeleportService_and_Reserved_Servers]]) |
 | Legacy chat (Chat service) | `TextChatService` (required for chat) ([[Age_Checks_and_Chat_Safety]]) |
 | `Lighting.Technology` | `LightingStyle` + `PrioritizeLightingQuality` ([[Rendering_Pipeline_and_Lighting_Technology]]) |
 | `Instance:Remove()`, `:connect` | `:Destroy()`, `:Connect` ([[Instance_Lifecycle_and_Destroy]]) |

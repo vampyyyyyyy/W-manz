@@ -23,6 +23,7 @@ status: complete
 | --- | --- | --- |
 | Read | `GetAsync`, `GetVersionAsync`, `GetVersionAtTimeAsync`, `ListVersionsAsync`, `UpdateAsync` | **25 MB/min** |
 | Write | `SetAsync`, `IncrementAsync`, `UpdateAsync`, `RemoveAsync` | **4 MB/min** |
+
 Throughput rounds **up to the next KB per request** (800 B + 1.2 KB = 3 KB counted). Many tiny writes to one key add up.
 
 ## Request budgets (per minute, experience-wide, shared with Open Cloud)
@@ -30,6 +31,7 @@ Throughput rounds **up to the next KB per request** (800 B + 1.2 KB = 3 KB count
 | --- | --- | --- | --- | --- |
 | Standard | 300 + CCU×40 | 300 + CCU×20 | 300 + CCU×2 | 300 + CCU×40 |
 | Ordered | 300 + CCU×40 (incl. `BatchGetAsync`) | 300 + CCU×20 | 300 + CCU×2 (`GetSortedAsync`) | 300 + CCU×40 |
+
 `UpdateAsync` consumes **both** read and write. Open Cloud scripts (admin panels, bots) can starve live servers, so rate-limit them (leaky bucket) ([[Open_Cloud_APIs]]). In-game, use `DataStoreService:SetRateLimitForRequestType()` / `GetRequestBudgetForRequestType()` to reserve headroom for critical saves.
 
 ## Storage

@@ -20,6 +20,7 @@ status: complete
 | **Recovery** | ✔ (auto) | ✔ (combo window) | | | | | ✔ (cancel window) | forced |
 | **Block** | ✔ | | | | | ✔ (if parry tech) | | guard-break |
 | **Stunned** | ✔ (timer) | | | | | | | refresh |
+
 "forced" = hit stun from the [[Damage_Pipeline]], which overrides the transition table.
 
 ## Server enforcement (sketch)

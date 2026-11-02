@@ -2,6 +2,16 @@
 
 Newest first. Every research run appends an entry: date, what changed, sources checked, open questions. Keep entries short and link the notes you touched.
 
+## 2026-11-02: Scheduled research run (change sweep: security + teleports)
+- Inbox: empty.
+- **New note: [[Device_Trust_API]]** (`complete`, from the official Creator Docs page and API YAML @ 2026-10-29). Covers `IntegrityService.EvaluatePlayerDeviceTrust` and `Player.DeviceTrustLevel`, with levels, platform coverage (only Android, Chromebook and Quest verified; web = `None`; Windows, iOS, macOS and consoles = `Unknown`), the official genre policies, callback rules (fail-open, ~10 s timeout, one per place), the measures caveat, Studio testing, and a strict-mode ranked-queue gate for a battlegrounds game. Linked from [[MOC_Anti_Exploit]], [[MOC_Networking_Security_and_Buffers]], [[Exploit_Threat_Model]], [[Data_Duplication_and_Trade_Exploits]] and [[Matchmaking_Customization]].
+- **[[TeleportService_and_Reserved_Servers]] rewritten:** `TeleportOptions.ReservedServerId` (a server-generated GUID; the first teleport creates the server, reuse routes to it) and `VipServerId` replace the access-code flow. **`ReserveServerAsync`, `ReservedServerAccessCode` and `ShouldReserveServer` are deprecated** (they still work). Added routing rules, reserved-server ID security, and a migration table. The old core example used `ShouldReserveServer`. Also updated [[Paid_Access_and_Private_Servers]] and [[Legacy_Code_Smells]].
+- **[[Humanoid_and_Character_Model]]:** the AvatarUnificationMode enum docs now say the property "no longer has an effect; R6 avatars always load as R6 rigs". After Dec 1 the risk is code built *for* the adapter, not classic R6 code.
+- **[[If_Local_Bindings]]:** added the `while local` prototype (debug-only flag, release 745).
+- **Formatting fix in 13 notes:** 14 places where a text line or code fence followed a table without a blank line, so it rendered as a broken table row. `last_updated` not bumped (formatting only).
+- Sources: `Roblox/creator-docs` @ 2026-10-29 (`scripting/security/device-trust.md`, `projects/teleport-private-servers.md`, `projects/teleport.md`, IntegrityService/Player/TeleportOptions/AvatarUnificationMode YAML), `luau-lang/luau` @ release 745, `luau-lang/rfcs` (no changes), and "Weekly Recap: October 26–30, 2026" via search excerpts.
+- Open questions: the other recap betas (orthographic camera, Web Play, AnimatedImage) are unverified; Device Trust Windows timing.
+
 ## 2026-10-29: Scheduled research run (Luau change sweep, P1 items)
 - Inbox: empty.
 - **New note: [[If_Local_Bindings]]** (`needs-verification`). It covers `if local` / `if const`, a Roblox Studio beta since Oct 6, 2026. The semantics come from the engine's own tests (`luau-lang/luau` parser, compiler and conformance tests): truthiness test, binding scoped to the `then` block only, single binding, works in `elseif` and if-expressions. Includes a server-validation example and gotchas (`false` is a miss). There's no merged RFC yet. Linked from [[MOC_Luau_Core_and_Compiler]], [[Luau_Syntax_Extensions]], [[Fast_Flags_and_Beta_Features]] and [[Luau_RFC_Tracker]].

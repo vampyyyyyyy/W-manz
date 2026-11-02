@@ -20,6 +20,7 @@ status: complete
 | Orientation | FacingCamera + `RotSpeed` | VelocityParallel + negative Squash |
 | Texture | Flake flipbook (`FlipbookStartRandom`) | Streak |
 | Lifetime | Long (6–12 s), so the emitter can sit lower | ~1 s |
+
 The low fall speed means flakes travel far sideways in wind, so lean shelter rays much more than for rain ([[Rain_and_Precipitation]]).
 
 ## Accumulation model

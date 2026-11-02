@@ -26,6 +26,7 @@ npm run watch                     # rbxtsc -w → out/ (Luau), Rojo syncs out/ i
 | TS generics, unions and editor tooling are mature | Extra build step, source maps for debugging are imperfect |
 | Huge npm-style package workflows | Some Luau idioms don't map cleanly (multiple returns, metatables) |
 | Great for teams coming from web dev | Most Roblox tutorials and DevForum answers are Luau |
+
 In 2026, Luau's own type system (new solver, type functions, read/write props) has narrowed the gap considerably ([[Luau_Type_System]]).
 
 ## Related

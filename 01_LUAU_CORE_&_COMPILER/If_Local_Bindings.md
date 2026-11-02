@@ -4,7 +4,7 @@ tags:
   - roblox-dev
   - luau/syntax
 type: concept
-last_updated: 2026-10-29
+last_updated: 2026-11-02
 status: needs-verification
 ---
 # If Local Bindings (`if local` / `if const`)
@@ -70,6 +70,9 @@ local humanoid = character:FindFirstChildOfClass("Humanoid")
 if not humanoid or humanoid.Health <= 0 then return end
 ```
 `if local` wins when you need the binding *only* inside one branch (it keeps the outer scope clean), or inside an if-expression. Early returns still win for long validation chains, because nesting gets deep fast.
+
+## Coming next: `while local` (prototype only)
+Release 745 (Oct 30, 2026) added `while local x = expr do … end` / `while const` behind the **debug-only** flag `DebugLuauWhileLocalSyntax`. Per the conformance tests, the binding is **re-evaluated every iteration** and the loop exits when it's falsy, which is handy for draining iterators or queues (`while local job = queue:pop() do`). It allows a single binding, as `if local` does. It isn't announced for Roblox (as of Nov 2, 2026).
 
 ## Gotchas
 - **`false` is a miss.** `if local enabled = part:GetAttribute("Enabled") then` skips the block for an attribute that exists and is `false`. Use a plain `local` and compare with `~= nil` when `false` is meaningful.

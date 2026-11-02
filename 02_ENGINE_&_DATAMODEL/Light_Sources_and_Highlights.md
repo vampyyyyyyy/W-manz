@@ -17,6 +17,7 @@ status: complete
 | `PointLight` | Sphere (`Range`) | Explosions, torches, hit flashes |
 | `SpotLight` | Cone (`Angle` ≤ 180, `Face`) | Flashlights, headlights |
 | `SurfaceLight` | From a part face (`Face`, `Angle`) | Screens, windows, neon panels |
+
 Shared: `Color`, `Brightness`, `Range`, `Shadows` (costly), `Enabled`.
 
 **Impact flash pattern:** create a PointLight at the hit, tween `Brightness` from ~4 to 0 over 0.12 s, then destroy. Do it client-side ([[Client_Side_VFX_Replication]], [[Hitstop_and_Impact_Feel]]).

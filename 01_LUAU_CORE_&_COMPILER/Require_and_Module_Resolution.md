@@ -27,6 +27,7 @@ local Net = require(game:GetService("ReplicatedStorage"):WaitForChild("Net"))
 | `@self/` | `script` itself (children of this module) |
 | `@game/` | `game` |
 | `@rbx/…` | Roblox-provided packages, e.g. `require("@rbx/AvatarAbilities")` in the [[Character_Controllers_and_ControllerManager|Character Controller Library]] |
+
 Each path component is a **child name**. `..` goes up. It's **non-blocking**: if the target doesn't exist yet, it errors immediately. Pair it with streaming- and replication-safe placement.
 
 Outside Roblox ([[Lune]], CLI, [[Rojo]] with luau-lsp), `.luaurc` / `.config.luau` **aliases** like `"@shared/Net"` and `init.luau` directory modules follow the Luau require-by-string RFCs ([[Luau_LSP]]).

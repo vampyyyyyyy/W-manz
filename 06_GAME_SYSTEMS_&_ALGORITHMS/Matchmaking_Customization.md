@@ -4,7 +4,7 @@ tags:
   - roblox-dev
   - systems/cross-server
 type: concept
-last_updated: 2026-10-27
+last_updated: 2026-11-02
 status: complete
 ---
 # Matchmaking (Roblox Custom Matchmaking)
@@ -32,7 +32,7 @@ status: complete
 3. It reserves a server, teleports the group, and removes the tickets (`RemoveAsync`). It re-queues on teleport failure.
 
 ## Related
-[[MemoryStore_Data_Structures]] · [[TeleportService_and_Reserved_Servers]] · [[MessagingService_Cross_Server]] · [[MemoryStoreService]] · [[Analytics_Dashboard_and_Metrics]] · [[Experiments_and_AB_Testing]] · [[DataStoreService]] · [[Retention_and_Engagement_Metrics]] · [[MOC_Game_Systems_and_Algorithms]]
+[[MemoryStore_Data_Structures]] · [[TeleportService_and_Reserved_Servers]] · [[Device_Trust_API]] (trusted-server pools) · [[MessagingService_Cross_Server]] · [[MemoryStoreService]] · [[Analytics_Dashboard_and_Metrics]] · [[Experiments_and_AB_Testing]] · [[DataStoreService]] · [[Retention_and_Engagement_Metrics]] · [[MOC_Game_Systems_and_Algorithms]]
 
 ## Sources
 - https://create.roblox.com/docs/matchmaking · https://create.roblox.com/docs/matchmaking/customize-matchmaking

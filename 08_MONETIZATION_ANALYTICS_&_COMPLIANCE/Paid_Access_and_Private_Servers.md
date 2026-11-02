@@ -4,7 +4,7 @@ tags:
   - roblox-dev
   - monetization/access
 type: concept
-last_updated: 2026-10-27
+last_updated: 2026-11-02
 status: complete
 ---
 # Paid Access & Private Servers
@@ -16,7 +16,7 @@ status: complete
 | --- | --- | --- |
 | Paid access | Premium, finished, niche games (story, horror, sims) | Big hit to discovery and conversion. Creator Rewards still apply |
 | Private servers | Social/grind games, competitive practice, content creators | Price changes cancel subs. Design server-owner tools |
-| Free + reserved servers | Your own "private match" logic via `TeleportService:ReserveServerAsync` | You build the access control ([[TeleportService_and_Reserved_Servers]]) |
+| Free + reserved servers | Your own "private match" logic: a server-generated GUID in `TeleportOptions.ReservedServerId` (`ReserveServerAsync` is deprecated as of Oct 2026) | You build the access control ([[TeleportService_and_Reserved_Servers]]) |
 
 ## Detecting private servers
 ```luau

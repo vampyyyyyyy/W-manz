@@ -4,7 +4,7 @@ tags:
   - roblox-dev
   - engine/characters
 type: api
-last_updated: 2026-10-29
+last_updated: 2026-11-02
 status: complete
 ---
 # Humanoid & the Character Model
@@ -35,8 +35,10 @@ Character (Model, PrimaryPart = HumanoidRootPart)
 
 ## R6 games: `AvatarUnificationMode` is being removed (Dec 1, 2026)
 - `Workspace.AvatarUnificationMode` turns on the **R6-to-R15 adapter**: R15 avatars join R6 games with invisible, R6-named adapter parts welded on, so they keep R6 scale and movement but gain layered clothing and animated heads. It's `NotScriptable` and only matters when the avatar type is R6 (API reference, Oct 2026).
-- **Official (staff "Weekly Recap: October 19–23, 2026"):** the property is a planned deprecation. If your game or tooling depends on it, **test and update before Dec 1, 2026**. Roblox hasn't said what replaces it or what the post-Dec 1 default will be (as of Oct 29, 2026). A staff reply in May 2026 mentioned "a more appropriate feature".
-- **What to check in an R6 combat game:** hitboxes and raycasts that assume exactly 6 parts, or that find limbs by name ("Left Arm", "Torso") ([[Hitbox_Detection_Methods]]), code that iterates `GetChildren()` on the character and trips over adapter parts, and ragdoll rigs that rebuild joints ([[Knockback_and_Ragdoll]]). Test in a copy of the place with the adapter both on and off before the date.
+- **Official (staff "Weekly Recap: October 19–23, 2026"):** the property is a planned deprecation. If your game or tooling depends on it, **test and update before Dec 1, 2026**.
+- **What happens after (API reference, Oct 29, 2026):** the `Default` and `Disabled` enum items are already tagged deprecated with the message "`Workspace.AvatarUnificationMode` no longer has an effect; **R6 avatars always load as R6 rigs**". `Default` "currently behaves the same as `Disabled`". `Enabled` and the property itself aren't tagged yet, so the docs look mid-update. **Likely outcome:** the adapter goes away and R6 games get plain 6-part R6 rigs with no adapter parts. No replacement feature is announced (a May 2026 staff reply only mentioned "a more appropriate feature").
+- **So the risk is the reverse of what you'd guess:** code that assumes classic R6 keeps working. What breaks is code built *for* the adapter: layered clothing or animated heads in an R6 game, scripts that look for the adapter `MeshPart`s, or hitboxes sized to R15-under-R6 bodies.
+- **What to check in an R6 combat game (if you had the adapter on):** hitboxes and raycasts that assume exactly 6 parts, or that find limbs by name ("Left Arm", "Torso") ([[Hitbox_Detection_Methods]]), code that iterates `GetChildren()` on the character and trips over adapter parts, and ragdoll rigs that rebuild joints ([[Knockback_and_Ragdoll]]). Test in a copy of the place with the adapter both on and off before the date.
 
 ## Gotchas
 - `Humanoid` internals are expensive at scale. **NPC crowds** should use light rigs, server-side simplification, or controllers without full Humanoids ([[Physics_Optimization]]).
@@ -47,6 +49,6 @@ Character (Model, PrimaryPart = HumanoidRootPart)
 [[Character_Controllers_and_ControllerManager]] · [[Animation_System]] · [[Player_and_Character_Lifecycle]] · [[Movement_Validation]] · [[Damage_Pipeline]] · [[Custom_Movement_Abilities]] · [[Knockback_and_Ragdoll]] · [[Network_Ownership]] · [[Physics_Engine_and_Assemblies]] · [[MOC_Engine_and_DataModel]]
 
 ## Sources
-- https://create.roblox.com/docs/reference/engine/classes/Workspace#AvatarUnificationMode · https://create.roblox.com/docs/characters/r6-to-r15-adapter
+- https://create.roblox.com/docs/reference/engine/classes/Workspace#AvatarUnificationMode · https://create.roblox.com/docs/reference/engine/enums/AvatarUnificationMode · https://create.roblox.com/docs/characters/r6-to-r15-adapter
 - https://devforum.roblox.com/t/weekly-recap-october-19%E2%80%9323-2026/4953263 (planned deprecation, Dec 1, 2026; read via search excerpts)
 - https://create.roblox.com/docs/reference/engine/classes/Humanoid · https://create.roblox.com/docs/characters

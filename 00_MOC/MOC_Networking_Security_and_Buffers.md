@@ -4,14 +4,14 @@ tags:
   - roblox-dev
   - moc/networking
 type: moc
-last_updated: 2026-10-27
+last_updated: 2026-11-02
 status: complete
 ---
 # MOC: Networking, Security & Buffers
 
 > **TL;DR:** How data crosses the client/server boundary **safely and cheaply**: remote design, rate limits and validation, the exploit threat model and server-side detection, plus binary serialization (buffers, bitpacking, quantization) and IDL networking libraries. The rule behind all of it: **the client asks, the server decides**.
 
-*31 notes in this domain.*
+*32 notes in this domain.*
 
 ## Start here
 1. [[Exploit_Threat_Model]]: what exploiters can and can't do
@@ -27,7 +27,7 @@ status: complete
 
 ## Anti-exploit & security
 - **Threats:** [[Exploit_Threat_Model]] · [[Auto_Farm_and_Remote_Spam_Exploits]] · [[Data_Duplication_and_Trade_Exploits]] · [[Client_Triggered_Instance_Security]] · [[Third_Party_Code_and_Backdoors]]
-- **Defense:** [[Defensive_Design]] · [[Movement_Validation]] · [[Hit_Validation]] · [[Lag_Compensation]] · [[Honeypot_Remotes]] · [[Server_Side_Detection_Heuristics]] · [[Ban_API_and_Consequences]]
+- **Defense:** [[Defensive_Design]] · [[Movement_Validation]] · [[Hit_Validation]] · [[Lag_Compensation]] · [[Honeypot_Remotes]] · [[Server_Side_Detection_Heuristics]] · [[Ban_API_and_Consequences]] · [[Device_Trust_API]]
 - **Platform controls:** [[Access_Control_and_Confidentiality]] · [[Script_Capabilities]] · [[HttpService_and_Secrets_Store]]
 
 ## Binary data & serialization

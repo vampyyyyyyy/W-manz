@@ -24,6 +24,7 @@ status: complete
 | `Default`/`Disabled` | Off |
 | `Automatic` | Engine enables it on narrow FOV (scopes), high speed toward the look direction (racing, **ODM flight**), or a camera far from the focus (free cam), with a short activation delay |
 | `Enabled` | Always on (manual control, e.g. during a cutscene) |
+
 It's **additive** to the normal streaming radius and replication foci, so it costs more memory and CPU, and normal bandwidth quotas still apply.
 ```luau
 game.Players.PlayerAdded:Connect(function(player)

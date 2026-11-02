@@ -21,6 +21,7 @@ status: complete
 | Per partition | Throttling starts around **30,000 units/min**. Sorted maps and queues live on **one** partition |
 | Hash map per item key | ~5,000 write / 15,000 read units per minute |
 | Errors | `PartitionRequestsOverLimit` (shard it), quota errors when memory is full (writes that grow memory fail) |
+
 Observe usage in the MemoryStore **observability** dashboard.
 
 ## When to use what

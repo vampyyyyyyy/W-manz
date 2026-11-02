@@ -22,6 +22,7 @@ status: complete
 | **Server Stats** | Server FPS, physics, average **data ping** of all players |
 | **MicroProfiler** | Capture server frame profiles from production ([[MicroProfiler]]) |
 | **Action Bindings / Server Jobs** etc. | Input bindings and engine job timing |
+
 Also useful: **Shift+F3** (network debug stats incl. per-client data ping), **Shift+F5** (render/perf stats), and **Ctrl+F6** (MicroProfiler).
 
 ## Production debugging workflow

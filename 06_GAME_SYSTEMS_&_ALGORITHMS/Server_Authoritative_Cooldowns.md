@@ -37,6 +37,7 @@ Send `readyAt` back to the client (or the cooldown start) so the UI ring matches
 | **Debounce** (a bool flag) | Prevent re-entry while a yielding action is in progress (e.g. a door animation) |
 | **Cooldown** (timestamp) | Game rule: "Fireball every 5 s" |
 | **Rate limit** (token bucket) | Anti-spam: cap request frequency regardless of rules ([[Remote_Rate_Limiting]]) |
+
 Use all three where appropriate. They solve different problems.
 
 ## Extras

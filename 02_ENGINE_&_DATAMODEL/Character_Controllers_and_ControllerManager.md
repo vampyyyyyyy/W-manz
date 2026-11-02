@@ -29,6 +29,7 @@ status: complete
 | `Input = { InputName, Mode, Repeats, OutlivesInputWhile, ActionSlot, CustomIcon… }` | `Mode`: `Press` (dash, attack, throw), `Hold`/`Toggle` (sprint, aim, block, crouch, glide), `Hold` + `Repeats`. Never reference the input in `StartsWhen`/`RunsWhile`, because that errors. Wired via the [[Input_Action_System]], with auto touch buttons |
 | `Config`, `State` | Read-only config. `State` **replicates and is restored on rollback** |
 | `OnSetup/OnStart/OnStop/OnUpdate/OnTeardown(managerCtx, abilityCtx)` | Behavior. `managerCtx` exposes `ControllerManager`, `BodyParts`, `RootCFrame`, `RootLookVector`, … |
+
 Sensors include `Ground`, `IsMoving`, `MoveInput`, `Ceiling`, `Climb`, `Water`/`WaterSurface`, `Sit`, `Tipped`, `Tool`, `LookDirectionInput`.
 
 ```luau

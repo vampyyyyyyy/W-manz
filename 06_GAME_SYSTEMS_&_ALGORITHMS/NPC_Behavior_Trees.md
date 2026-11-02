@@ -56,6 +56,7 @@ local brain = BT.Selector({
 | [[Finite_State_Machines]] | Few clear states (door, simple mob, boss phases) |
 | Behavior tree | Many prioritized, reusable behaviors |
 | Utility AI (score each action, pick the max) | Emergent, nuanced choices (hunger vs threat vs loot). Scores are easy to tune |
+
 Bosses often combine them: an FSM for phases, a BT inside each phase.
 
 ## Perception & performance
