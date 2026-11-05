@@ -4,7 +4,7 @@ tags:
   - roblox-dev
   - community/legacy
 type: concept
-last_updated: 2026-11-02
+last_updated: 2026-11-05
 status: complete
 ---
 # Legacy Code Smells
@@ -34,6 +34,7 @@ status: complete
 | BodyVelocity, BodyGyro, BodyPosition | LinearVelocity, AlignOrientation, AlignPosition ([[Mover_Constraints]]) |
 | `Humanoid:LoadAnimation` | `Animator:LoadAnimation` ([[Animation_System]]) |
 | `Workspace:FindPartOnRay*` | `Workspace:Raycast` ([[Raycasting]]) |
+| `FilterType` + `FilterDescendantsInstances` on Raycast/OverlapParams | `ExcludeInstances` / `IncludeInstances` (superseded, not deprecated. Faster, and you can mix both lists) ([[Raycasting]]) |
 | `Player:LoadCharacter` | `LoadCharacterAsync` ([[Player_and_Character_Lifecycle]]) |
 | `GetProductInfo` | `GetProductInfoAsync` ([[MarketplaceService]]) |
 | `ReserveServerAsync` + `ReservedServerAccessCode`, `ShouldReserveServer` | Server-generated GUID in `TeleportOptions.ReservedServerId`. Deprecated Oct 2026 ([[TeleportService_and_Reserved_Servers]]) |

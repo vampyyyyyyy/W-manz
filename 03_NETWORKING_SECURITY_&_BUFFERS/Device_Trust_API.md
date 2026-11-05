@@ -4,7 +4,7 @@ tags:
   - roblox-dev
   - networking/security
 type: api
-last_updated: 2026-11-02
+last_updated: 2026-11-05
 status: complete
 ---
 # Device Trust API (IntegrityService)
@@ -20,7 +20,7 @@ status: complete
 | `Standard` | Passed some checks | Trusted |
 | `Full` | Passed every check | Trusted |
 
-The property changes **once**, after `Players.PlayerAdded` fires and before the callback runs. Only the server and the player's own client can read it, and **every other client sees `Pending`**. It's tagged `Hidden`, `ReadOnly` and `NotReplicated` in the API reference.
+The property changes **once**, after `Players.PlayerAdded` fires and before the callback runs. Only the server and the player's own client can read it, and **every other client sees `Pending`**. It's tagged `ReadOnly` and `NotReplicated` in the API reference. An earlier `Hidden` tag was removed in the first week of Nov 2026, which likely means it now appears in Studio's Properties window (not checked).
 
 **Never compare levels numerically.** `Unknown` sorts before `None`, so `level.Value > None.Value` silently excludes every Windows and iOS player. Always use an allow-list table.
 

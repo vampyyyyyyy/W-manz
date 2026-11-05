@@ -4,7 +4,7 @@ tags:
   - roblox-dev
   - engine/spatial-queries
 type: api
-last_updated: 2026-10-27
+last_updated: 2026-11-05
 status: complete
 ---
 # Spatial Queries (Overlap)
@@ -15,8 +15,7 @@ status: complete
 ```luau
 --!strict
 local params = OverlapParams.new()
-params.FilterType = Enum.RaycastFilterType.Exclude
-params.FilterDescendantsInstances = { attacker }
+params.ExcludeInstances = { attacker }  -- supersedes FilterType + FilterDescendantsInstances (see Raycasting)
 params.MaxParts = 64                 -- cap work (0 = unlimited)
 -- params.CollisionGroup = "Hitboxes"; params.RespectCanCollide = false
 

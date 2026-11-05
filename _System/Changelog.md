@@ -2,6 +2,19 @@
 
 Newest first. Every research run appends an entry: date, what changed, sources checked, open questions. Keep entries short and link the notes you touched.
 
+## 2026-11-05: Scheduled research run (docs-repo diff sweep)
+- Inbox: empty. `luau-lang/rfcs` and `luau-lang/luau`: no relevant changes since Nov 2.
+- **New method:** diffed `Roblox/creator-docs` commits from Oct 29 to Nov 5 (API YAML) instead of relying on release-note excerpts. Recorded in [[Research_Queue]].
+- **Raycasts and shapecasts:** `RaycastParams.Margin` (a raycast becomes a spherecast) and `SizeGradient` (shapes grow or shrink along the cast), from the official "Upgrading Shapecasts" post (late Oct 2026): every shapecast is now faster and more accurate, and a thin spherecast costs about the same as a raycast. **Vault gap fixed:** `ExcludeInstances`/`IncludeInstances` (live since about Apr 2026, release 714) supersede `FilterType` + `FilterDescendantsInstances`, with a gotcha: `IncludeInstances = {}` includes nothing. Updated [[Raycasting]], [[Shapecasting]] (widening-cone example), [[Spatial_Queries_Overlap]], [[Hitbox_Detection_Methods]], [[Hit_Validation]], [[Legacy_Code_Smells]] and [[Projectile_Systems]]. That last one also fixes a latent bug: the sample set an Exclude filter with no list, so projectiles could hit their shooter. Now one params object per owner.
+- **[[Hitbox_Detection_Methods]] + [[Raycast_Hitbox_Module]]:** Avatar Settings Single Collider hit detection (`UseParts` / `UseCollider` / new `UseHitbox`). In the last two modes, body parts have `CanQuery`/`CanTouch` off, which breaks limb raycasts and name-based headshots.
+- **[[Camera_System]]:** orthographic projection (Studio beta, Studio-only for now) and `ViewStretch` with a stun-pulse example. [[Camera_Shake]] links it.
+- **[[Physics_Engine_and_Assemblies]]:** `Workspace.NextGenerationPhysicsSolver` (experimental RolloutState) replaced `PrimalPhysicsSolver` in the docs.
+- **[[Memory_Leaks]]:** new `DataModel.ServerLowMemoryWarning` event with an idempotent trim handler.
+- **[[Device_Trust_API]]:** `DeviceTrustLevel` lost its `Hidden` tag.
+- Also seen, no vault impact: the streaming properties lost `NotScriptable` and gained the `PluginOrOpenCloud` capability; `Workspace.ImprovedAnimationConstraint` was removed from the docs; MessagingService lists its Open Cloud equivalent; `ReserveServerAsync` is now formally tagged Deprecated (already covered Nov 2).
+- Sources: `Roblox/creator-docs` @ 2026-11-05 (Workspace, Camera, RaycastParams, WorldRoot, DataModel, Player, AvatarSettings enums, `studio/avatar-settings.md`), DevForum "Upgrading Shapecasts…", "New spatial query filters", and "[Studio Beta] … Orthographic Camera" via search excerpts.
+- Open questions: hitbox part parenting under `UseHitbox`; whether ViewStretch and orthographic camera work in live games; shapecast benchmark numbers.
+
 ## 2026-11-02: Scheduled research run (change sweep: security + teleports)
 - Inbox: empty.
 - **New note: [[Device_Trust_API]]** (`complete`, from the official Creator Docs page and API YAML @ 2026-10-29). Covers `IntegrityService.EvaluatePlayerDeviceTrust` and `Player.DeviceTrustLevel`, with levels, platform coverage (only Android, Chromebook and Quest verified; web = `None`; Windows, iOS, macOS and consoles = `Unknown`), the official genre policies, callback rules (fail-open, ~10 s timeout, one per place), the measures caveat, Studio testing, and a strict-mode ranked-queue gate for a battlegrounds game. Linked from [[MOC_Anti_Exploit]], [[MOC_Networking_Security_and_Buffers]], [[Exploit_Threat_Model]], [[Data_Duplication_and_Trade_Exploits]] and [[Matchmaking_Customization]].

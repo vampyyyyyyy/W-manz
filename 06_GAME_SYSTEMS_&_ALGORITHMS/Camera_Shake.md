@@ -4,7 +4,7 @@ tags:
   - roblox-dev
   - systems/game-feel
 type: code-pattern
-last_updated: 2026-10-27
+last_updated: 2026-11-05
 status: complete
 ---
 # Camera Shake
@@ -44,7 +44,7 @@ return CameraShake
 Use it in the camera update: `cam.CFrame = baseCF * CameraShake.offset(dt)` ([[Camera_System]]).
 
 ## Directional "punch"
-For hits, add a short **directional kick** opposite the hit direction (spring back with `TweenService:SmoothDamp`) in addition to the trauma shake. It reads as impact rather than an earthquake ([[TweenService]]).
+For hits, add a short **directional kick** opposite the hit direction (spring back with `TweenService:SmoothDamp`) in addition to the trauma shake. It reads as impact rather than an earthquake ([[TweenService]]). For stuns, a brief `Camera.ViewStretch` pulse adds disorientation without more shake ([[Camera_System]]).
 
 ## Tuning table
 | Event | Trauma |

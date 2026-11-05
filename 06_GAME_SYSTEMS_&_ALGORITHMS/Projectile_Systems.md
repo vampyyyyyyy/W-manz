@@ -4,7 +4,7 @@ tags:
   - roblox-dev
   - systems/combat
 type: code-pattern
-last_updated: 2026-10-27
+last_updated: 2026-11-05
 status: complete
 ---
 # Projectile Systems
@@ -24,15 +24,37 @@ status: complete
 type Projectile = { pos: Vector3, vel: Vector3, age: number, maxAge: number, ownerId: number }
 local GRAVITY = Vector3.new(0, -workspace.Gravity * 0.5, 0)   -- tune per weapon
 local active: { Projectile } = {}
-local params = RaycastParams.new()
-params.FilterType = Enum.RaycastFilterType.Exclude
+local Players = game:GetService("Players")
+
+-- One RaycastParams per shooter so a projectile never hits its own owner.
+-- (A single shared params object can't exclude a different character per projectile.)
+local paramsByOwner: { [number]: RaycastParams } = {}
+local function paramsFor(ownerId: number): RaycastParams
+	local params = paramsByOwner[ownerId]
+	if not params then
+		params = RaycastParams.new()
+		local exclude: { Instance } = {}                  -- build explicitly: a nil inside a table literal leaves a hole
+		local owner = Players:GetPlayerByUserId(ownerId)
+		if owner and owner.Character then table.insert(exclude, owner.Character) end
+		local effects = workspace:FindFirstChild("Effects")
+		if effects then table.insert(exclude, effects) end
+		params.ExcludeInstances = exclude
+		-- params.Margin = 0.2  -- "thick" bullet: turns the ray into a thin spherecast (see Shapecasting)
+		paramsByOwner[ownerId] = params
+	end
+	return params
+end
+Players.PlayerAdded:Connect(function(player)
+	player.CharacterAdded:Connect(function() paramsByOwner[player.UserId] = nil end) -- respawn = new character to exclude
+end)
+Players.PlayerRemoving:Connect(function(player) paramsByOwner[player.UserId] = nil end)
 
 local function step(dt: number, onHit: (Projectile, RaycastResult) -> ())
 	for i = #active, 1, -1 do
 		local p = active[i]
 		local nextVel = p.vel + GRAVITY * dt
 		local displacement = (p.vel + nextVel) * 0.5 * dt         -- trapezoid integration
-		local result = workspace:Raycast(p.pos, displacement, params)
+		local result = workspace:Raycast(p.pos, displacement, paramsFor(p.ownerId))
 		if result then
 			onHit(p, result)
 			active[i] = active[#active]; active[#active] = nil     -- swap-remove (O(1))
@@ -56,7 +78,7 @@ game:GetService("RunService").Heartbeat:Connect(function(dt) step(dt, Damage.onP
 ## Performance
 - Hundreds of projectiles: keep state in arrays and `vector`s, batch-step them in one Heartbeat. Consider [[Parallel_Luau]] for raycast-heavy batches (raycasts are parallel-safe).
 - Pool the visual parts ([[Object_Pooling]]). Use `Workspace:BulkMoveTo` for many cosmetic parts.
-- Thick projectiles: use `Spherecast` per step instead of `Raycast` ([[Shapecasting]]).
+- Thick projectiles: set `RaycastParams.Margin` (the ray becomes a spherecast of that radius) or use `Spherecast` per step. Since the Oct 2026 shapecast upgrade, a thin spherecast costs about the same as a raycast ([[Shapecasting]]).
 
 ## Related
 [[Raycasting]] · [[Shapecasting]] · [[Hit_Validation]] · [[Lag_Compensation]] · [[Client_Side_VFX_Replication]] · [[Object_Pooling]] · [[Damage_Pipeline]] · [[Parallel_Luau]] · [[Global_Wind]] · [[MOC_Combat_Systems]]

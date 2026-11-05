@@ -4,7 +4,7 @@ tags:
   - roblox-dev
   - engine/physics
 type: concept
-last_updated: 2026-10-27
+last_updated: 2026-11-05
 status: complete
 ---
 # Physics Engine & Assemblies
@@ -35,8 +35,12 @@ status: complete
 | `CustomPhysicalProperties` | Density, friction, elasticity + weights |
 | `CollisionGroup` | [[Collision_Groups_and_Filtering]] |
 
+## Experimental: next-generation constraint solver (as of Nov 5, 2026)
+`Workspace.NextGenerationPhysicsSolver` (`Enum.RolloutState`: `Default` / `Disabled` / `Enabled`) opts a place into an experimental solver that "can provide improved accuracy and robustness in complex setups" (API reference). It replaced the earlier `Workspace.PrimalPhysicsSolver` in the docs between Oct 29 and Nov 5, 2026. No announcement or performance numbers yet. If ragdolls, vehicles or constraint-heavy ODM rigs jitter, try it in a **test place**, compare with the [[MicroProfiler]], and watch for a rollout that changes `Default` ([[Fast_Flags_and_Beta_Features]]).
+
 ## Related
 [[Adaptive_Timestepping]] · [[Physics_Sleep_System]] · [[Mover_Constraints]] · [[Mechanical_Constraints]] · [[Network_Ownership]] · [[Collision_Groups_and_Filtering]] · [[Physics_Optimization]] · [[Knockback_and_Ragdoll]] · [[Grappling_Hook_Physics]] · [[Task_Scheduler]] · [[MOC_Engine_and_DataModel]]
 
 ## Sources
 - https://create.roblox.com/docs/physics/assemblies · https://create.roblox.com/docs/physics
+- https://create.roblox.com/docs/reference/engine/classes/Workspace#NextGenerationPhysicsSolver (Creator Docs repo @ 2026-11-05)

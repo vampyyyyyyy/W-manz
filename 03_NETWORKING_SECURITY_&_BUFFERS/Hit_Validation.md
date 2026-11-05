@@ -4,7 +4,7 @@ tags:
   - roblox-dev
   - security/combat
 type: code-pattern
-last_updated: 2026-10-27
+last_updated: 2026-11-05
 status: complete
 ---
 # Hit Validation
@@ -28,8 +28,7 @@ status: complete
 local V = require(game.ReplicatedStorage.Shared.Validate)
 local ORIGIN_TOL, TARGET_TOL, MAX_RANGE = 8, 6, 500
 local staticParams = RaycastParams.new()
-staticParams.FilterType = Enum.RaycastFilterType.Include
-staticParams.FilterDescendantsInstances = { workspace.Map } -- static level geometry only
+staticParams.IncludeInstances = { workspace.Map } -- static level geometry only (never set this to {}: that includes nothing)
 
 FireRemote.OnServerEvent:Connect(function(player: Player, origin: unknown, hitPos: unknown, hitPart: unknown)
 	if not (V.vector3(origin) and V.vector3(hitPos)) then return end

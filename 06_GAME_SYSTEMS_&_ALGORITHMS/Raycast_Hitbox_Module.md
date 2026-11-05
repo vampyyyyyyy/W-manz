@@ -4,7 +4,7 @@ tags:
   - roblox-dev
   - systems/combat
 type: framework
-last_updated: 2026-10-27
+last_updated: 2026-11-05
 status: complete
 ---
 # RaycastHitbox (community module)
@@ -31,6 +31,9 @@ track:GetMarkerReachedSignal("HitEnd"):Connect(function() hitbox:HitStop() end)
 - ✅ Weapons with distinct shapes (long spears, scythes) where the swing path matters, and animation-driven combat on the **client** (feel). Validate on the server ([[Hit_Validation]]).
 - ❌ Server-only detection for big lobbies: rays per point per frame per player add up. Use overlap boxes or cones on the server ([[Hitbox_Detection_Methods]]).
 - ❌ Very low FPS clients: big gaps between frames can skip thin targets. Add more points or sweep with [[Shapecasting]].
+
+## Avatar Settings caveat (Nov 2026)
+If a game sets Avatar Settings collision to **Single Collider** with hit detection on the collider or a separate hitbox, body parts have `CanQuery` off and **rays cast at limbs won't register**. The weapon's `DmgPoint` rays still work, but they only hit the collider or hitbox box ([[Hitbox_Detection_Methods]]).
 
 ## Alternatives
 Overlap boxes ([[Spatial_Queries_Overlap]]), shapecast sweeps, or your own point-trail caster (about 60 lines once you understand the idea).
